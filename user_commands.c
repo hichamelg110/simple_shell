@@ -14,3 +14,4 @@ else
 error_handler("Failed reading command\n");
 }
 }
+}
