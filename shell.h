@@ -32,5 +32,10 @@ void command_user_enter(char *command, size_t s);
  */
 void command_running(const char *command);
 
+/*
+ * function that prints an error message and exits the program.
+ */
+
+void error_handler(const char *error_msg);
 #endif /* SHELL_H */
 
