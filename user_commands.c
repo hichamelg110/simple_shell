@@ -1,21 +1,22 @@
 #include "shell.h"
-
-void read_command(char *command, size_t size)
+/**
+ * command_user_enter - a function that reads a command
+ * from the standard input.
+ * @command: a pointer to the buffer where the command will be stored.
+ * @s: The size
+ */
+void command_user_enter(char *command, size_t s)
 {
-if (fgets(command, size, stdin) == NULL)
+if (fgets(command, s, stdin) == NULL)
 {
 if (feof(stdin))
 {
 hiczak_print("\n");
 exit(EXIT_SUCCESS);
 }
-
 else
 {
-hiczak_print("Failed reading command.\n");
-exit(EXIT_FAILURE);
+error_handler("Failed reading command\n");
 }
 }
-command[strcspn(command, "\n")] = '\0';
 }
-

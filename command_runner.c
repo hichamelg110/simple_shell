@@ -1,4 +1,8 @@
 #include "shell.h"
+/**
+ * command_running - a Function that runs a command using fork and exec.
+ * @command: The command to run
+ */
 
 void command_running(const char *command)
 {
@@ -15,7 +19,8 @@ char *args[128];
 int arg_count = 0;
 
 char *token = strtok((char *)command, " ");
-while (token != NULL) {
+while (token != NULL)
+{
 args[arg_count++] = token;
 token = strtok(NULL, " ");
 }
