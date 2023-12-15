@@ -1,18 +1,18 @@
 #include "shell.h"
 
-void command_running(const char *command, char *const args[])
+void execute_command(const char *command)
 {
-pid_t small_pid = fork();
+pid_t c_pid = fork();
 
-if (small_pid == 0)
-{
-execve(command, args);
-perror("execve");
-exit(EXIT_FAILURE);
-}
-else if (small_pid == -1)
+if (c_pid == -1)
 {
 perror("fork");
+exit(EXIT_FAILURE);
+}
+else if (c_pid == 0)
+{
+execlp(command, command, (char *)NULL);
+perror("execlp");
 exit(EXIT_FAILURE);
 }
 else
