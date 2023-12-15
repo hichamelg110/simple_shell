@@ -6,12 +6,11 @@ if (fgets(command, s, stdin) == NULL)
 {
 if (feof(stdin))
 {
-printf("\n");
+hiczak_print("\n");
 exit(EXIT_SUCCESS);
 }
 else
 {
-error_handler("Error reading command\n");
-}
+error_handler("Failed reading command\n");
 }
 }
