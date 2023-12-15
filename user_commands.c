@@ -7,7 +7,7 @@
  */
 void command_user_enter(char *command, size_t s)
 {
-if (fgets(command, s, stdin))
+if (fgets(command, s, stdin) == NULL)
 {
 if (feof(stdin))
 {
