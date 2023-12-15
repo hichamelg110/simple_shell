@@ -2,13 +2,12 @@
 
 int main(void)
 {
-char* memory_comm = malloc(230);
+char command[120];
 while (1)
 {
 hiczak_prompt_displaying();
+fgets(command, sizeof(command), stdin);
 }
-free(memory_comm);
 
 return (0);
 }
-
