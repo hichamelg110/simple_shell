@@ -3,19 +3,28 @@
  * command_running - a Function that runs a command using fork and exec.
  * @command: The command to run
  */
-void command_running(const char *command)
+void execute_command(const char *command)
 {
-pid_t small_pid = fork();
+pid_t c_pid = fork();
 
-if (small_pid == 0)
+if (c_pid == -1)
 {
-execlp(command, command, (char *)NULL);
-hiczak_print("execlp");
+hiczak_print("Error fork process.\n");
 exit(EXIT_FAILURE);
 }
-else if (small_pid == -1)
+else if (c_pid == 0)
 {
-hiczak_print("fork");
+char *args[200];
+int arg_count = 0;
+char *token = strtok((char *)command, " ");
+while (token != NULL) {
+args[arg_count++] = token;
+token = strtok(NULL, " ");
+}
+args[arg_count] = NULL;
+execvp(args[0], args);
+
+hiczak_print("Error execute command.\n");
 exit(EXIT_FAILURE);
 }
 else
