@@ -1,7 +1,6 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-/* Declarations for the simple shell. */
 
 #include <stdio.h>
 #include <stdlib.h>
