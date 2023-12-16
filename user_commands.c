@@ -10,12 +10,12 @@ if (fgets(command, s, stdin) == NULL)
 {
 if (feof(stdin))
 {
-hiczak_print("\n");
-exit(EXIT_SUCCESS);
+	hiczak_print("\n");
+	exit(EXIT_SUCCESS);
 }
 else
 {
-error_handler("Failed reading command\n");
+	error_handler("Failed reading command\n");
 }
 }
 }
