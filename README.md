@@ -1,1 +1,1 @@
-hiczak readme for simple_shell project
+hiczak readme file for simple_shell project
