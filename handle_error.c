@@ -5,8 +5,6 @@
  * an error message and exits the program.
  * @error_msg: The error message to be printed.
  *
- * This function writes the error message to the standard error (stderr),
- * and exits the program with a failure status.
  */
 void error_handler(const char *error_msg)
 {
